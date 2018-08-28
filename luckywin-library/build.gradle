@@ -16,6 +16,17 @@ android {
 
     }
 
+    /*防止gc异常*/
+    dexOptions {
+        javaMaxHeapSize "2g" //specify the heap size for the dex process
+        preDexLibraries = false //delete the already predexed libraries
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,4 +43,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'org.web3j:core:3.0.1-android'
 }
