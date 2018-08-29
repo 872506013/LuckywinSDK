@@ -19,6 +19,8 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //指定绝对路径
+        maven { url "file:///Users/longxiang/lukywinsdk" }
     }
 }
 
